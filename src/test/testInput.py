@@ -5,6 +5,10 @@ class TestInput(unittest.TestCase):
     """Prueba unittest para Polinomios"""
     
     def testInputC(self):
+        """
+        Test para checar si el método encuentra argumentos malos 
+        para la bandera -c
+        """
         inp = Input()
         save_file = 'shamir.png'
         num_eval = 10
@@ -17,6 +21,10 @@ class TestInput(unittest.TestCase):
         self.assertRaises(TypeError, inp.checkExceptionsC, save_file, num_eval, min_pts, fail[3])
         
     def testInputD(self):
+        """
+        Test para checar si el método encuentra argumentos malos 
+        para la bandera -d
+        """
         inp = Input()
         frg = 'shamir.png.frg'
         aes = 'shamir.png.aes'
