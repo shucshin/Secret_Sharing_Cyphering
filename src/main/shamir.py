@@ -1,5 +1,7 @@
 import hashlib
 import random
+import sys
+sys.path.insert(1, '../../Proyecto3_MyP_2022_2/src/main')
 from Crypto.Cipher import AES
 from Crypto.Protocol.SecretSharing import Shamir
 from input import *
@@ -10,19 +12,40 @@ class Shamir:
     
     #Funciones para cifrar
     def getKey(self, password):
-        #Regresa la versión de 256-byte de la contraseña escrita por el usuario
+        """
+        Método que convierte una contraseña a una versión de 256 bits
+        
+        Parámetros:
+            password : La contraseña escrita por el usuario
+        Regresa:
+            key : código hash con SHA-256 (32 caracteres)
+        """
         key = hashlib.sha256(password.encode('utf8')).digest()
         return key
     
     def getAesC(self, file, password):
-        #Regresa el mensaje encryptado usando AES
+        """
+        Método que encrypta el mensaje usando AES
+
+        Parámetros:
+            file : el archivo claro
+            password : la llave de 256 bits (32 caracteres)
+        Regresa:
+            aesEnc : mensaje encriptado
+        """
         aes = AES.new(password, AES.MODE_CFB, 16*b'\0')
         aesEnc = aes.encrypt(file)
         return aesEnc
         
     def generateBits(b, t):
         """
-        Genera una serie de t enteros en el rango de 256 bits
+        Método que genera una serie de t enteros en el rango de 256 bits
+
+        Parámetros:
+            b : rango de bits, en este caso será 256
+            t : Número de enteros que se generará
+        Regresa:
+            list(bits) : lista de bits generados arbitrariamente
         """
         bits = set()
         while len(bits) < t:
@@ -31,7 +54,14 @@ class Shamir:
         
     def getEvaluations(self, n, t, key):
         """
-        Genera un polinomio para poder evaluarla con n puntos
+        Método que genera un polinomio para poder evaluarla con n puntos
+
+        Parámetros:
+            n : número de evaluaciones totales (n > 2)
+            t : número de puntos necesarios para descifrar (1 < t <= n)
+            key : la llave de código hash con SHA-256
+        Regresa:
+            frg: las n evaluaciones del polinomio
         """
         dom = Shamir.generateBits(256, n)
         coef = Shamir.generateBits(256, t-1)
@@ -43,20 +73,34 @@ class Shamir:
         return frg
     
 
-    #Funciones para decifrar
-    def getAesD(txt, password):
-        #Regresa el mensaje decryptado usando AES
-        aes = AES.new(password, AES.MODE_CFB, 16*b'\0')
-        aesDec = aes.decrypt(txt)
+    #Funciones para descifrar
+    def getAesD(ciphered, byte):
+        """
+        Método que descifra el mensaje usando AES
+
+        Parámetros:
+            ciphered : contenido del archivo .aes
+            byte : la contraseña convertido en bytes
+        Regresa:
+            aesDec : mensaje descifrado
+        """
+        aes = AES.new(byte, AES.MODE_CFB, 16*b'\0')
+        aesDec = aes.decrypt(ciphered)
         return aesDec
     
-    def divide(points):
+    def divide(evals):
         """
-        Divide los puntos en tuplas que contiene
+        Método que divide los puntos en tuplas que contiene
         su evaluación correspondiente y se agregan
         a una lista de tuplas llamado pts.
+
+        Parámetros:
+            evals : contenido del archivo .frg
+
+        Regresa:
+            pts : lista de tuplas de las evaluaciones divididas
         """
-        lines = points.strip().split('\n')
+        lines = evals.strip().split('\n')
         pts = []
         for l in lines:
             l = l[1:-1].split(',')
@@ -65,8 +109,16 @@ class Shamir:
 
     def decrypt(self, evals, ciphered):
         """
-        Recibe el contenido del archivo .frg para poder
-        obtener la contraseña y decifrar el archivo
+        Método que recibe el contenido del archivo .frg y
+        archivo .aes para poder obtener la contraseña y 
+        decifrar el archivo
+
+        Parámetros:
+            evals : contenido del archivo .frg
+            ciphered : contenido del archivo .aes
+
+        Regresa:
+            clear : documento claro
         """
         pts = Shamir.divide(evals)
         bigPrime = 5210644015679228794060694325390955853335898483908056458352183851018372555735221

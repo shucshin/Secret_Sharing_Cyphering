@@ -43,17 +43,17 @@ cd Proyecto3_MyP_2022_2/src/
 #### Cifrar
 Ejemplo 1
 ``` sh
-# 
-python3 main/main.py -c shamir.png 10 3 shamir/Vaporwave.png
+#python3 main/main.py -c
+python3 main/main.py -c shamir.png 10 3 sham/Vaporwave.png
 ```
 Ejemplo 2
 ``` sh
-python3 main/main.py -c shamir.txt 19 2 shamir/Hard.txt
+python3 main/main.py -c shamir.txt 20 2 sham/Hard.txt
 ```
 #### Descifrar
 Ejemplo 1
 ``` sh
-# 
+#python3 main/main.py -d
 python3 main/main.py -d shamir.png.frg shamir.png.aes
 ```
 Ejemplo 2

@@ -67,5 +67,6 @@ class Polynom:
         ans = 0
         for i in range(len(pts)):
             xi, yi = pts[i]
-            ans = (Polynom.mulPoints(pts, n, i, xi, yi, prime) + ans + prime) % prime
+            mp = Polynom.mulPoints(pts, n, i, xi, yi, prime)
+            ans = (mp + ans + prime) % prime
         return ans
