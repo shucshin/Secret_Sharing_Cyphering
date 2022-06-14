@@ -6,42 +6,45 @@ from output import *
 
 class Main:
     
+    """Instanciando clases"""
     inp = Input()
     sha = Shamir()
     out = Output()
     
+    #Bandera -c para Cifrar
     if sys.argv[1] == '-c':
+        """Lectura de los argumentos, guarda la contraseña en
+        password y se usa como parámetro para obtener la llave
+        que se usará para obtener el archivo cifrado junto con
+        el archivo claro como 'aes' y las n evaluaciones del 
+        polinomio junto con n y t como 'evals'"""
         args = inp.readC()
-        #Guardar la contraseña en el variable password
         password = args[4]
-        #Obtener la llave usando password como argumento 
         key = sha.getKey(password)
-        #Lectura del archivo claro
         clear = open(args[3], "rb").read()
-        #Obtención del archivo cifrado
         aes = sha.getAesC(clear, key)
-        
-        
-        #Evals tiene las n evaluaciones
         evals = sha.getEvaluations(args[1], args[2], key)
         
-        
-        #Genera el archivo .aes
+        """Genera los archivos .aes y .frg respectivamente"""
         out.makeAES(args[0], aes)
-        #Genera el archivo .frg
         out.makeFRG(args[0], evals)
         
-        
+    #Bandera -d para Descifrar
     elif sys.argv[1] == '-d':
+        """Lectura de los argumentos, lee el archivo .frg como evals
+        y .aes como ciphered para usarlos como parámetros en 
+        la función para descifrar y guardarlo en decrypted"""
         args = inp.readD()
         evals = open(args[0], "r").read()
         ciphered = open(args[1], "rb").read()
-        #evals = .frg, ciphered = .aes
         decrypted = sha.decrypt(evals, ciphered)
-        filename = args[1].replace('.aes', '')
+        
+        """Se obtiene el nombre el archivo original y
+        escribe el dato descifrado en ese nombre"""
+        filename = args[0].replace('.frg', '')
         out.getOriginal(filename, decrypted)
         
     else:
-        TypeError("")
+        TypeError("La bandera debe ser -c o -d")
     
     

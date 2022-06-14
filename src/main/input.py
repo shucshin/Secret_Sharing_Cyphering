@@ -3,22 +3,19 @@ import sys
 import os
 import getpass
 
-
 class Input:
+    """Clase para manejo de entrada"""
     
     def readC(self):
         """
-        Método para leer los argumentos desde la términal y guardarlos
-        en variables de la siguiente orden:
-        
+        Método para leer los argumentos desde la términal, 
+        obtener la contraseña indicada por el usuario,
+        detectar posibles excepciones y extraer una
+        lista de de ellos.
         """
-        #Archivo donde se guardará las n evaluaciones 
         save_file = sys.argv[2]
-        #Equivalente a n
         num_eval = int(sys.argv[3])
-        #Equivalente a t
         min_pts = int(sys.argv[4])
-        #Documento claro
         clr_doc = sys.argv[5]
         password = getpass.getpass("Escriba la contraseña: ")
         
