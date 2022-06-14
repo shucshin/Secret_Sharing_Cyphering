@@ -1,15 +1,22 @@
 class Polynom:
+    """Clase para manejo de polinomios"""
     
     def __init__(self, coef):
+        """
+        Constructor de la clase para pasar el coeficiente
+        como argumento automáticamente.
+        """
         self.coef = coef
     
     def evaluate(self, n, prime):
         """
-        Método que evalua polinomio de grado n
-        Args:
-            n : Grado del polinomio
+        Método que evalua polinomio de grado m con operaciones
+        aritméticas.
+        
+        Parámetros:
+            n : Número con la que se evaluará el polinomio
             prime : Número primo para calcular el módulo
-        Returns:
+        Regresa:
             ans : Número resultante evaluado
         """
         ans = 0
@@ -19,18 +26,18 @@ class Polynom:
     
     def mulPoints(pts, n, k, xi, yi, prime):
         """
-        Método que
+        Método que calcula la interpolación polynomial en x de índice k
 
-        Args:
-            pts : _description_
-            n : _description_
-            k : _description_
-            xi : _description_
-            yi : _description_
-            prime : _description_
+        Parámetros:
+            pts : Lista de tuplas para los puntos en el plano 
+            n : Número con la que se evaluará el polinomio
+            k : índice
+            xi : Punto donde se hará la interpolación el polinomio
+            yi : P(xi)
+            prime : Número primo para calcular el módulo
 
         Returns:
-            ans : _description_
+            ans : Número resultante evaluado
         """
         poly = []
         for i in range(len(pts)):
@@ -47,15 +54,15 @@ class Polynom:
     
     def lagrange(pts, n, prime):
         """
-        Método que 
+        Método que aplica la fórmula de interpolación de lagrange
 
-        Args:
+        Parámetros:
             pts : Lista de tuplas para los puntos en el plano 
-            n : N
+            n : Número con la que se evaluará el polinomio
             prime : Número primo para calcular el módulo
 
         Returns:
-            ans : _description_
+            ans : Número resultante evaluado
         """
         ans = 0
         for i in range(len(pts)):

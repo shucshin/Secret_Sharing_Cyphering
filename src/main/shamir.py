@@ -6,6 +6,8 @@ from input import *
 from polynom import *
 
 class Shamir:
+    """Clase para manejar cifrado y descifrado de datos"""
+    
     #Funciones para cifrar
     def getKey(self, password):
         #Regresa la versión de 256-byte de la contraseña escrita por el usuario
