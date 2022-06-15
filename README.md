@@ -40,7 +40,7 @@ Para ejecutar el proyecto debe situarse en el directorio `src/` de la siguiente 
 cd Proyecto3_MyP_2022_2/src/
 ```
 
-### Cifrar
+### Cifrar:
 Formato
 ```sh
 python3 main/main.py -c savefile n t cleardoc
@@ -53,7 +53,7 @@ Ejemplo 2
 ``` sh
 python3 main/main.py -c shamir.txt 20 2 sham/Hard.txt
 ```
-### Descifrar
+### Descifrar:
 Formato
 ```sh
 python3 main/main.py -d filename.frg filename.aes
@@ -68,6 +68,7 @@ python3 main/main.py -d shamir.txt.frg shamir.txt.aes
 ```
 
 Después de haber ejecurado estos comandos, puede abrir el archivo para verificar el resultado con:
+
 Ejemplo 1
 ```sh
 open shamir.png
