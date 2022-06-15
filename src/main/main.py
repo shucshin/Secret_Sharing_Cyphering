@@ -45,6 +45,6 @@ class Main:
         out.getOriginal(filename, decrypted)
         
     else:
-        TypeError("La bandera debe ser -c o -d")
+        print(TypeError("Error: La bandera debe ser -c o -d"))
     
     
