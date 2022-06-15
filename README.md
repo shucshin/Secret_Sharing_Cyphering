@@ -78,10 +78,6 @@ Ejemplo 2
 open shamir.txt
 ```
 
-
-## Documentación: 
-El `pdf` solicitado se encuentra en el directorio `docs/`, bajo el nombre de `proyecto3.pdf`.
-
 ## Integrante: 
 - Ui Chul Shin
 
