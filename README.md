@@ -67,9 +67,9 @@ Ejemplo 2
 python3 main/main.py -d shamir.txt.frg shamir.txt.aes
 ```
 
-Después de haber ejecurado estos comandos, puede abrir el archivo para verificar el resultado con 
-Ejemplo 1: `open shamir.png` 
-Ejemplo 2: `open shamir.txt`
+Después de haber ejecurado estos comandos, puede abrir el archivo para verificar el resultado con:
+Ejemplo 1: ```open shamir.png```
+Ejemplo 2: ```open shamir.txt```
 
 
 ## Documentación: 
