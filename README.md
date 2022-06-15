@@ -1,7 +1,7 @@
 # Proyecto 3: Modelado y Programación 
 
 ## Descripción:
-Programa que usa el esquema de secreto compartido de Shamir para cifrar un dato ocultandolo en n diferentes datos con al menos t ≤ n cualquiera de ellos siendo posible descifrar el dato ocultado y recuperar el dato original.
+Programa que usa el esquema de secreto compartido de Shamir para cifrar un dato ocultandolo en `n` diferentes datos con al menos `t ≤ n` cualquiera de ellos siendo posible descifrar el dato ocultado y recuperar el dato original.
 
 ## Ejecución:
 Primero, clone el repositorio.
@@ -67,7 +67,8 @@ Ejemplo 2
 python3 main/main.py -d shamir.txt.frg shamir.txt.aes
 ```
 
-Después de haber ejecurado estos comandos, puede abrir el archivo para verificar el resultado con:
+### Verificar:
+Después de haber ejecutado estos comandos, puede abrir el archivo para verificar el resultado con:
 
 Ejemplo 1
 ```sh
