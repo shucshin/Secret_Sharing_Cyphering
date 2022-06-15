@@ -41,35 +41,37 @@ cd Proyecto3_MyP_2022_2/src/
 ```
 
 #### Cifrar
-Formato
-```sh
-python3 main/main.py -c savefile n t cleardoc
-```
 Ejemplo 1
 ``` sh
+#python3 main/main.py -c savefile n t cleardoc
 python3 main/main.py -c shamir.png 10 3 sham/Vaporwave.png
 ```
 Ejemplo 2
 ``` sh
+#python3 main/main.py -c savefile n t cleardoc
 python3 main/main.py -c shamir.txt 20 2 sham/Hard.txt
 ```
 #### Descifrar
-Formato
-```sh
-python3 main/main.py -d filename.frg filename.aes
-```
 Ejemplo 1
 ``` sh
+#python3 main/main.py -d filename.frg filename.aes
 python3 main/main.py -d shamir.png.frg shamir.png.aes
 ```
 Ejemplo 2
 ``` sh
+#python3 main/main.py -d filename.frg filename.aes
 python3 main/main.py -d shamir.txt.frg shamir.txt.aes
 ```
 
 Después de haber ejecurado estos comandos, puede abrir el archivo para verificar el resultado con:
-Ejemplo 1: ```open shamir.png```
-Ejemplo 2: ```open shamir.txt```
+Ejemplo 1
+```sh
+open shamir.png
+```
+Ejemplo 2
+```sh
+open shamir.txt
+```
 
 
 ## Documentación: 
