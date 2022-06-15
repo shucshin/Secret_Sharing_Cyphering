@@ -1,7 +1,7 @@
 # Proyecto 3: Modelado y Programación 
 
 ## Descripción:
-Programa que usa el esquema de secreto compartido de Shamir para cifrar un dato ocultandolo en n diferentes datos con al menos t `≤` n cualquiera de ellos siendo posible descifrar el dato ocultado y recuperar el dato original.
+Programa que usa el esquema de secreto compartido de Shamir para cifrar un dato ocultandolo en n diferentes datos con al menos t ≤ n cualquiera de ellos siendo posible descifrar el dato ocultado y recuperar el dato original.
 
 ## Ejecución:
 Primero, clone el repositorio.
