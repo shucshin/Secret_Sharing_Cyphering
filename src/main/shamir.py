@@ -1,7 +1,7 @@
 import hashlib
 import random
 import sys
-sys.path.insert(1, '../../Proyecto3_MyP_2022_2/src/main')
+sys.path.insert(1, '../../Secret_Sharing_Cyphering/src/main')
 from Crypto.Cipher import AES
 from Crypto.Protocol.SecretSharing import Shamir
 from input import *

@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(1, '../../Proyecto3_MyP_2022_2/src')
+sys.path.insert(1, '../../Secret_Sharing_Cyphering/src')
 from input import *
 from shamir import *
 from output import *
