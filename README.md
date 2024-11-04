@@ -1,4 +1,4 @@
-# Proyecto 3: Modelado y Programación 
+# Secret Sharing Cyphering
 
 ## Descripción:
 Programa que usa el esquema de secreto compartido de Shamir para cifrar un dato ocultandolo en `n` diferentes datos con al menos `t ≤ n` cualquiera de ellos siendo posible descifrar el dato ocultado y recuperar el dato original.
@@ -7,7 +7,7 @@ Programa que usa el esquema de secreto compartido de Shamir para cifrar un dato 
 Primero, clone el repositorio.
 
 ``` sh
-git clone https://github.com/shucshin/Proyecto3_MyP_2022_2.git
+git clone https://github.com/shucshin/Secret_Sharing_Cyphering.git
 ```
 
 ### Prerrequisitos:
@@ -24,7 +24,7 @@ pip3 install pycryptodome
 Para ejecutar las pruebas debe situarse en el directorio `src/` de la siguiente forma: 
 
 ```sh
-cd Proyecto3_MyP_2022_2/src/
+cd Secret_Sharing_Cyphering/src/
 ```
 
 Luego, ejecute: 
@@ -37,7 +37,7 @@ python3 -m unittest discover
 Para ejecutar el proyecto debe situarse en el directorio `src/` de la siguiente forma: 
 
 ```sh
-cd Proyecto3_MyP_2022_2/src/
+cd Secret_Sharing_Cyphering/src/
 ```
 
 ### Cifrar:
